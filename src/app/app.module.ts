@@ -10,12 +10,14 @@ import { HeaderComponent } from '@cmp/header/header.component';
 import { DialogNewItemListComponent } from '@cmp/dialog-new-item-list/dialog-new-item-list.component';
 import { FormsModule } from '@angular/forms';
 import { DeviceDetectorModule } from 'ngx-device-detector';
+import { DialogListComponent } from './core/components/dialog-list/dialog-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     DialogNewItemListComponent,
+    DialogListComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,7 @@ import { DeviceDetectorModule } from 'ngx-device-detector';
   ],
   entryComponents: [
     DialogNewItemListComponent,
+    DialogListComponent
   ],
   bootstrap: [AppComponent]
 })

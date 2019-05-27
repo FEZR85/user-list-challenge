@@ -1,0 +1,12 @@
+<div mat-dialog-content>
+    <p class="no-select-text" *ngIf="data.option == 'add'">Enter the name of your list</p>
+    <p class="no-select-text" *ngIf="data.option == 'edit'">Edit the name of your list</p>
+    <mat-form-field>
+      <input #input pattern="[a-zA-Z0-9]+" matInput [(ngModel)]="data.name" required>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions align="end" class="no-select-text">
+    <button type="button" mat-button mat-dialog-close (click)="onNoClick()">Cancel</button>
+    <button mat-raised-button [mat-dialog-close]="input.valid" cdkFocusInitial
+      disabled="{{input.invalid}}">Ok</button>
+  </div>
