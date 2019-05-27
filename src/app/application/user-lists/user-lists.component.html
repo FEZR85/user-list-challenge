@@ -1,0 +1,12 @@
+<h3 class="no-select-text">Your lists</h3>
+<div class="container">
+    <div *ngIf="!lists || !lists?.length" class="no-items no-select-text">
+        <p>Hi there! Start creating a list!</p>
+    </div>
+    <div *ngFor="let list of lists; let i = index" (click)="goToList(i)">
+        <figure>
+            <button class="no-select-text"><mat-icon>ballot</mat-icon></button>
+            <figcaption>{{list.name}}</figcaption>
+        </figure>
+    </div>
+</div>

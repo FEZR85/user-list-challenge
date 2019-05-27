@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '@/app-routing.module';
@@ -12,6 +11,7 @@ import { DialogNewItemListComponent } from '@cmp/dialog-new-item-list/dialog-new
 import { FormsModule } from '@angular/forms';
 import { DeviceDetectorModule } from 'ngx-device-detector';
 import { DialogListComponent } from './core/components/dialog-list/dialog-list.component';
+import { UserListsComponent } from './application/user-lists/user-lists.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +20,7 @@ import { DialogListComponent } from './core/components/dialog-list/dialog-list.c
     UserListComponent,
     DialogNewItemListComponent,
     DialogListComponent,
+    UserListsComponent
   ],
   imports: [
     BrowserModule,
