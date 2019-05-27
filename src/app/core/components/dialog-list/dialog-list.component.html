@@ -7,6 +7,6 @@
   </div>
   <div mat-dialog-actions align="end" class="no-select-text">
     <button type="button" mat-button mat-dialog-close (click)="onNoClick()">Cancel</button>
-    <button mat-raised-button [mat-dialog-close]="input.valid" cdkFocusInitial
-      disabled="{{input.invalid}}">Ok</button>
+    <button mat-raised-button [mat-dialog-close]="data" cdkFocusInitial
+      [disabled]="validateField(data.name)">Ok</button>
   </div>

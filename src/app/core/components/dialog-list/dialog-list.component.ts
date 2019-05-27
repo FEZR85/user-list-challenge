@@ -27,4 +27,9 @@ export class DialogListComponent implements OnInit {
     onNoClick(): void {
         this.dialogRef.close();
     }
+
+    validateField(value) {
+        let patt = new RegExp("[a-zA-Z0-9]+");
+        return !patt.test(value);
+    }
 }

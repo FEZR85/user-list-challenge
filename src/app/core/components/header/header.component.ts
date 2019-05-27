@@ -6,6 +6,7 @@ import { Lists } from '@/application/things.model';
 import { DialogListComponent } from '@cmp/dialog-list/dialog-list.component';
 import { RequestService } from '@services/request.service';
 import { Router } from '@angular/router';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'ulc-header',
@@ -20,7 +21,8 @@ export class HeaderComponent implements OnInit {
         iconRegistry: MatIconRegistry,
         sanitizer: DomSanitizer,
         private reqService: RequestService,
-        private router: Router
+        private router: Router,
+        private deviceService: DeviceDetectorService
     ) {
         iconRegistry.addSvgIcon(
             'logo',
@@ -33,7 +35,7 @@ export class HeaderComponent implements OnInit {
 
     openDialog(edit:boolean = false, id: number = -1): void {
         const dialogRef = this.dialog.open(DialogListComponent, {
-            width: '80%',
+            width: this.deviceService.isMobile() ? '80%' : '480px',
             data: {
                 option: edit ? 'edit' : 'add',
                 name: edit && id > -1 ? this.mockLists[id].name : ''

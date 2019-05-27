@@ -34,7 +34,7 @@ export class UserListComponent implements OnInit {
 
     openDialog(edit:boolean = false, idParent: number = -1, idChild: number = -1): void {
         const dialogRef = this.dialog.open(DialogNewItemListComponent, {
-            width: '80%',
+            width: this.isMobile ? '80%' : '480px',
             data: {
                 option: edit ? 'edit' : 'add',
                 name: 

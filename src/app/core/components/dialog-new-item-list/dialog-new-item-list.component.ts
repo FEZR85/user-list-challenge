@@ -28,4 +28,9 @@ export class DialogNewItemListComponent implements OnInit {
         this.dialogRef.close();
     }
 
+    validateField(value) {
+        let patt = new RegExp("[a-zA-Z0-9]+");
+        return !patt.test(value);
+    }
+
 }
