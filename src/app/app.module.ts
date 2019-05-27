@@ -7,6 +7,7 @@ import { AppRoutingModule } from '@/app-routing.module';
 import { AppComponent } from '@/app.component';
 import { MaterialModule } from '@/core/modules/material.module';
 import { HeaderComponent } from '@cmp/header/header.component';
+import { UserListComponent } from '@app/user-list/user-list.component';
 import { DialogNewItemListComponent } from '@cmp/dialog-new-item-list/dialog-new-item-list.component';
 import { FormsModule } from '@angular/forms';
 import { DeviceDetectorModule } from 'ngx-device-detector';
@@ -16,6 +17,7 @@ import { DialogListComponent } from './core/components/dialog-list/dialog-list.c
   declarations: [
     AppComponent,
     HeaderComponent,
+    UserListComponent,
     DialogNewItemListComponent,
     DialogListComponent,
   ],

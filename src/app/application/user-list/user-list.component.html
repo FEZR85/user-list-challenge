@@ -1,0 +1,39 @@
+<h3 class="no-select-text">{{nameList}}</h3>
+
+<div *ngIf="!mockList || !mockList?.length" class="no-items">
+    <p class="no-select-text">Hi there! Start creating an item!</p>
+    <button (click)="openDialog()" class="add-button no-select-text"></button>
+</div>
+
+<ng-template ngFor let-item [ngForOf]="mockList" let-id="index">
+    <div class="item" [ngClass]="{'mobile': isMobile}">
+        <p><mat-checkbox [(ngModel)]="item.value" (change)="saveStatus()">{{item.name}}</mat-checkbox></p>
+        <div class="group-button no-select-text">
+            <button (click)="openDialog(false, id)">
+                <mat-icon>add</mat-icon>
+            </button>
+            <button (click)="openDialog(true, id)">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button *ngIf="item?.children?.length" (click)="toggleChildren(id,item)">
+                <mat-icon *ngIf="!item?.expand">arrow_drop_down</mat-icon>
+                <mat-icon *ngIf="item?.expand">arrow_drop_up</mat-icon>
+            </button>
+        </div>
+    </div>
+    <ng-template [ngIf]="item?.expand">
+        <div class="item item-child" [ngClass]="{'mobile': isMobile}"
+            *ngFor="let child of item?.children; let idChild = index">
+            <p><mat-checkbox [(ngModel)]="child.value"  (change)="saveStatus()">{{child.name}}</mat-checkbox></p>
+            <div class="group-button no-select-text">
+                <button (click)="openDialog(true, id, idChild)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </div>
+        </div>
+    </ng-template>
+</ng-template>
+
+<div *ngIf="mockList?.length" class="add-items no-select-text" [ngClass]="{'mobile': isMobile}">
+  <button (click)="openDialog()" class="add-button"></button>
+</div>
