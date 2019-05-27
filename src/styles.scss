@@ -1,0 +1,67 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+	-webkit-box-sizing: border-box !important;
+	-moz-box-sizing: border-box !important;
+	box-sizing: border-box !important;
+}
+
+*:before,
+*:after {
+	-webkit-box-sizing: border-box !important;
+	-moz-box-sizing: border-box !important;
+	box-sizing: border-box !important;
+}
+
+html,
+body {
+    touch-action: none;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+}
+
+.icon {
+    background: none;
+}
+
+a,
+p,
+span,
+button {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+a,
+button {
+	cursor: pointer;
+	border: 0 none;
+	background: none;
+
+	&:focus {
+		outline: 0 none;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+.mobile {
+	a,
+	p,
+	span,
+	button {
+		font-size: 12px;
+	}
+}
+
+.no-select-text {
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}

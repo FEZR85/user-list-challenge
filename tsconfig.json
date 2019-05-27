@@ -17,6 +17,21 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "baseUrl": "src",
+    "paths": {
+      "@/*": [
+          "app/*"
+      ],
+      "@cmp/*": [
+        "app/core/components/*"
+      ],
+      "@app/*": [
+        "app/application/*"
+      ],
+      "@services/*": [
+        "app/core/services/*"
+      ]
+    }
   }
 }
